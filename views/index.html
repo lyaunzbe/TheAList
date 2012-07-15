@@ -1,0 +1,77 @@
+<div id="canvas"></div>
+<div class="left-panel">
+	<h2> The A List</h2>
+	<!-- <div id="search">
+  		<form action="/" method="post">
+    		<input type="text" name="handle" />
+    		<input type="submit" value="Go" />
+  		</form>
+	</div> -->
+	<h2>
+		Hello @{{handle}}
+ 		<p class="err">{{err}}</p>
+	</h2>
+</div>
+<br/>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/2.8.1/d3.v2.min.js
+"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js
+"></script>
+<script src="./javascripts/bubbles.js"></script>
+<style type="text/css">
+
+	.bubble {
+		display: block;
+		position: absolute;
+	}
+
+	.bubbleFill {
+		position: absolute;
+		display: block;
+		border: solid 2px silver;
+	}
+	.tooltip{
+		position: absolute;
+		background-color:white;
+		border:2px solid grey;
+		padding:5px 10px 5px 10px;
+	}
+
+	.err{
+		font-size:14px;
+		font-style:normal;
+	}
+
+</style>
+<script id="page-data" type="object/json">
+	{{{tData}}}
+
+</script>	
+
+<script type="text/javascript">
+$(document).ready(function() {
+  data = $.parseJSON($('#page-data').html());
+  // console.log(data);
+  if(data){
+  	var vis = new SimpleVis("#canvas",data)
+  }else{
+  	// $('#canvas').append($('<img src="'))
+  }
+
+  
+  $("#canvas").on('mouseover', function(){
+  	// $(this).css('cursor','crosshair');
+  });
+
+  $(".bubbleFill").on('mouseover', function(){
+    $(this).css('z-index', '9998');
+    
+  });
+  $(".bubbleFill").on('mouseout', function(){
+    $(this).css('z-index', '');
+  });
+
+});
+	
+</script>

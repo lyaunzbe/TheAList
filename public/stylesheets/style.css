@@ -1,0 +1,45 @@
+body {
+	margin:0;
+  	font-family: 'Arvo', serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#canvas{
+	float:left;
+	width:50% !important;
+
+}
+
+.left-panel{
+	float:right;
+	width:50%;
+	height:100%;
+	font-style:italic;
+	font-weight:700;
+	
+
+}
+
+.left-panel h2{
+	border-bottom:3px dashed black;
+	padding-bottom:15px;
+	text-align:center;
+	margin-top:10px;
+}
+
+#search{
+	padding: 10px 10px 10px 10px;
+	width: 65%;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #EEE;
+	border-radius: 20px;
+
+}
+
+.tooltip{
+	z-index:9999;
+}
